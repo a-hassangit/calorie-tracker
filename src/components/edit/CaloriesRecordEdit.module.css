@@ -1,4 +1,4 @@
-.form {
+/* .form {
   background-color: var(--theme-background-ultralight);
   padding: 20px;
   border-radius: var(--theme-border-radius-smooth);
@@ -70,5 +70,89 @@
     grid-column: 1 / -1;
     justify-self: center;
     width: 100%;
+  }
+} */
+
+.form {
+  background-color: var(--theme-background-ultralight);
+  padding: 20px;
+  border-radius: var(--theme-border-radius-smooth);
+  border: 1px solid var(--theme-background-normal);
+  display: grid;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.form label {
+  color: var(--theme-color-dark);
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.form input[type="text"],
+.calories-input,
+.form input[type="date"],
+.form select {
+  background-color: var(--theme-background-light);
+  color: var(--theme-color-normal);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--theme-color-normal);
+
+  width: 100%;
+  /* تم إلغاء min-width ليتناسب مع الموبايل */
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.error {
+  border: 1px solid maroon;
+  background-color: var(--theme-background-light);
+  color: maroon;
+}
+
+.footer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer button {
+  background-color: var(--theme-color-normal);
+  color: var(--theme-background-light);
+  display: block;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  flex: 1; /* تجعل الأزرار تتكيف بشكل مرن بدون عرض ثابت */
+  max-width: 200px;
+}
+
+.footer button.secondary {
+  background-color: var(--theme-background-light);
+  border: 1px solid var(--theme-background-normal);
+  color: var(--theme-color-normal);
+}
+
+@media (min-width: 786px) {
+  .form {
+    grid-template-rows: repeat(2, 1fr) minmax(40px, auto);
+    grid-template-columns: repeat(2, auto 1fr);
+    column-gap: 1rem;
+  }
+
+  .form label {
+    margin-right: 30px;
+  }
+
+  .footer {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 }
